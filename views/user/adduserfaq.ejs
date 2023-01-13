@@ -1,0 +1,106 @@
+<!-- <%- include('layouts/header') %> -->
+
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <%- include('layouts/sidebar') %>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <div
+            class="d-sm-flex align-items-center justify-content-between mb-4"
+          >
+            <h1 class="h3 mb-0 text-gray-800">FAQ</h1>
+          </div>
+
+          <!-- Content Row -->
+          <body class="bg-gradient-primary" width="30%">
+            <div class="container">
+              <!-- Outer Row -->
+              <div class="row justify-content-center">
+                <%if(message.length >0) {%>
+                <h1
+                  style="color: red"
+                  class="alert alert-warning alert-dismissible fade show"
+                  role="alert"
+                >
+                  <p><%= message? message:'' %></p>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Close"
+                  ></button>
+                </h1>
+                <%}%>
+                <div class="col-xl-10 col-lg-12 col-md-9">
+                  <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                      <!-- Nested Row within Card Body -->
+                      <div class="row">
+                        <div class="col-lg-10">
+                          <div class="p-5">
+                            <div
+                              textalign="center"
+                              padding="12px 12px"
+                              borderwidth="2px"
+                              width="70%"
+                            >
+                              <form
+                                class="user"
+                                action="/user/user-add-faq-post"
+                                method="post"
+                              >
+                                <div class="form-group " >
+                                  <label for="questions" textalign="center"
+                                    >Question</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control form-control-user"
+                                    id="questions"
+                                    aria-describedby="questionsHelp"
+                                    name="questions"
+                                  />
+                                </div>
+
+                                <button
+                                  class="btn btn-success btn-user btn-block"
+                                >
+                                  Send
+                                </button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </body>
+
+          <!-- Content Row -->
+        </div>
+      </div>
+      <!-- End of Main Content -->
+
+      <%- include('layouts/siteFooter') %>
+    </div>
+    <!-- End of Content Wrapper -->
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <%- include('layouts/footer') %>
+</body>
